@@ -30,7 +30,7 @@ This project was created using [Node.js](https://nodejs.org/en/) , [Express](htt
 
 ```
 # Clone this repository
-git clone
+git clone https://github.com/Abhinandan-pixel/Yelpcamp.git
 cd Yelpcamp
 
 # Install dependencies
