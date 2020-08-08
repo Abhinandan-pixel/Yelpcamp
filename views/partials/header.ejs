@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>YelpCamp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+        <a class="navbar-brand" href="/">YelpCamp</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/campgrounds">Camps</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <% if(!currentUser){ %>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/login">Sign in</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/register">Sign up</a>
+                </li>
+                <% }else {%>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        Signed In As <%= currentUser.username %>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/logout">Sign out</a>
+                </li>
+                <% }%>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <% if(error && error.length > 0){%>
+        <div class="alert alert-danger alert-dismissible fade show my-4" role="alert">
+            <%= error %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <% } %>
+        <% if(success && success.length>0){ %>
+        <div class="alert alert-success alert-dismissible fade show my-4" role="alert">
+            <%= success %>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <% }%>
+    </div>
