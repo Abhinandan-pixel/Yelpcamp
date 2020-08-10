@@ -49,7 +49,7 @@ app.use(function(req,res,next){
 //Connections.
 //======================================================
 try{
-    mongoose.connect("mongodb+srv://Abhinandan:Selenagomez22@cluster0-uqx3h.mongodb.net/video?retryWrites=true&w=majority",{useNewUrlParser: true,  useUnifiedTopology: true})
+    mongoose.connect("Mongo-url",{useNewUrlParser: true,  useUnifiedTopology: true})
 }catch(error){
     console.log(error);
 }
