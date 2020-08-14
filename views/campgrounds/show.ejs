@@ -15,10 +15,10 @@
                     <h4><a href="#"><%= campground.name %></a></h4>
                     <p class="desc"><%= campground.description %></p>
                     <p class="desc">
-                        <em>Created By <%= campground.author.username %>, <%= moment(campground.createdAt).fromNow() %> </em>
+                        <em>Created By <a href="/users/<%=campground.author.id%>"><%= campground.author.username %></a>, <%= moment(campground.createdAt).fromNow() %> </em>
                          
                     </p>
-                    <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+                    <% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){ %>
                     <a href="/campgrounds/<%= campground._id%>/edit" class="btn btn-warning">EDIT CAMPGROUND</a>
                     <form action="/campgrounds/<%= campground._id%>?_method=DELETE" method="POST" id="delete-form">
                         <button class="btn btn-danger">DELETE</button>
@@ -36,10 +36,10 @@
                     <% for(var comment of campground.comments) { %>
                     <div class="row">
                         <div class="col-md-12">
-                                  <h5 class="card-title"><%= comment.author.username %></h5>
+                                  <h5 class="card-title"><a href="/users/<%=comment.author.id%>"><%= comment.author.username %></a></h5>
                                   <p class="card-text"><%= comment.text%></p>
                                   <p class="card-text pb-3"><small class="text-muted">Last updated <%= moment(comment.createdAt).fromNow() %></small></p>
-                                 <% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+                                 <% if(currentUser && comment.author.id.equals(currentUser._id) currentUser && currentUser.isAdmin) { %>
                                   <a class="btn btn-sm btn-warning active" href="/campgrounds/<%= campground._id%>/comments/<%= comment._id%>/edit">
                                     Edit
                                   </a>
