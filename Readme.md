@@ -3,8 +3,8 @@
 ## Visuals
 
 <p>
-<img src="GIFS\YelpCamp-Google-Chrome-2020-08-1.gif" style="width:1000px;margin-bottom:50px;"> 
-<img src="GIFS\YelpCamp-Google-Chrome-2020-08-0.gif" style="width:1000px;margin-bottom:50px;">
+<img src="GIFS\YelpCamp-Google-Chrome-2020-08-0 (2).gif" style="width:1000px;margin-bottom:50px;"> 
+<img src="GIFS\YelpCamp-Google-Chrome-2020-08-1.gif" style="width:1000px;margin-bottom:50px;">
 <img src="GIFS\YelpCamp-Google-Chrome-2020-08-0 (1).gif" style="width:1000px;">
 </p>
 <details>
