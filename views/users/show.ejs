@@ -1,0 +1,72 @@
+<%- include('../partials/header.ejs') -%>
+
+<div class="container">
+    <div class="profile-wrapper">
+        <div class="profile-section-user">
+            <div class="profile-cover-img"><img src="https://bootdey.com/img/Content/flores-amarillas-wallpaper.jpeg" alt=""></div>
+            
+            <div class="profile-info-brief p-3"><a href="<%=profile.avatar %>"><img class="img-fluid user-profile-avatar" src="<%= profile.avatar%>" alt=""></a>
+                <div class="text-center">
+                    <h5 class="text-uppercase mb-4"><%=profile.username%></h5>
+                    <p class="text-muted fz-base"><%=profile.about%></p>
+                </div>
+            </div>
+            <!-- /.profile-info-brief -->
+            <hr class="m-0">
+            <div class="hidden-sm-down">
+                <hr class="m-0">
+                <div class="profile-info-contact p-4">
+                    <h6 class="mb-3">General Information</h6>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><strong>First Name:</strong></td>
+                                <td>
+                                    <p class="text-muted mb-0"><%= profile.firstName%></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Last Name:</strong></td>
+                                <td>
+                                    <p class="text-muted mb-0"><%= profile.lastName%></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>EMAIL:</strong></td>
+                                <td>
+                                    <p class="text-muted mb-0"><%=profile.email%></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr class="m-0">
+            </div>
+        </div>
+        <div class="profile-section-main">
+            <ul class="nav nav-tabs profile-tabs" role="tablist">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#profile-overview" role="tab">Campgrounds</a></li>
+            </ul>
+            <div class="tab-content profile-tabs-content">
+                    <!-- /.post-editor -->
+                    <%for(var campground of campgrounds){%>
+                    <div class="stream-posts">
+                        <div class="stream-post">
+                            <div class="sp-author">
+                                <a href="/campgrounds/<%=campground._id%>" class="sp-author-avatar"><img src="<%=campground.image%>" alt=""></a>
+                                <h6 class="sp-author-name"><a href="/campgrounds/<%=campground._id%>"><%=campground.name %></a></h6></div>
+                            <div class="sp-content">
+                                <div class="sp-info">posted <%= moment(campground.createdAt).fromNow()%></div>
+                                <p class="sp-paragraph mb-0"><%= campground.description.substring(0,105)%> .....</p>
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+                </div>
+            </div>
+        </div>
+ 
+    </div>
+    </div>
+
+<%- include('../partials/footer.ejs') -%>
