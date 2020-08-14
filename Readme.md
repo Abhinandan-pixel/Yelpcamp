@@ -5,12 +5,8 @@
 <p>
 <img src="GIFS\YelpCamp-Google-Chrome-2020-08-0 (2).gif" style="width:1000px;margin-bottom:50px;"> 
 <img src="GIFS\YelpCamp-Google-Chrome-2020-08-1.gif" style="width:1000px;margin-bottom:50px;">
-<img src="GIFS\YelpCamp-Google-Chrome-2020-08-0 (1).gif" style="width:1000px;">
+<img src="GIFS\YelpCamp-Google-Chrome-2020-08-2.gif" style="width:1000px;margin-bottom:50px;"> 
 </p>
-<details>
-    <summary>See More GIFS</summary>
-    <img src="GIFS\YelpCamp-Google-Chrome-2020-08-2.gif" style="width:1000px;margin-bottom:50px;"> 
-</details>
 
 Yelpcamp is a project where users can create and add reviews about the added campground. In order to add a campground or review it,user must have an account.This project was part of web developer bootcamp by Colt Steele on udemy.
 
@@ -21,6 +17,7 @@ This project was created using [Node.js](https://nodejs.org/en/) , [Express](htt
 <ul>
     <li>Users can create,edit,remove campgrounds.</li>
     <li>Users can review campgrounds,and edit or delete their reviews.</li>
+    <li>User profiles include more information on user (full name, email, profile picture) and their campgrounds.</li>
 </ul>
 
 ## Running
