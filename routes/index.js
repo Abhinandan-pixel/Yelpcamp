@@ -3,6 +3,8 @@ var locus = require("locus")
 var router = express.Router();
 var passport = require("passport");
 var user = require("../models/user")
+var campground = require("../models/campground");
+var middleware = require("../middleware/index");
 router.get("/",(req, res)=>{
     res.render("landingpage")
 })
