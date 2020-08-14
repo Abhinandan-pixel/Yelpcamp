@@ -12,7 +12,17 @@ router.get("/register",(req, res)=>{
 })
 //Sign up handler.
 router.post("/register",(req, res)=>{
-    let newUser = new user({username:req.body.username})
+    let newUser = new user(
+        {
+           username : req.body.username,
+           firstName: req.body.firstName,
+           lastName : req.body.lastName,
+           email    : req.body.email,
+           avatar   : req.body.avatar,
+           about    : req.body.about,
+        })
+        if(req.body.admin === 'claireDunphy#23')
+            newUser.isAdmin = true;
     user.register(newUser,req.body.password,(err,user)=>{
         if(err){
             req.flash("error",err.message);
@@ -41,8 +51,22 @@ router.post("/login",passport.authenticate("local",
 //Logout ROUTE.
 router.get("/logout",function(req, res){
     req.logOut();
-    req.flash("success","Logged you out!");
+    req.flash("success","Aloha, Come back soon.");
     res.redirect("/campgrounds")
+})
+// Users profile.
+router.get("/users/:id",middleware.isLoggedIn,(req, res)=>{
+    user.findById(req.params.id,(error,profile)=>{
+        if(error){
+            req.flash("error","Profile Not Found");
+            req.redirect("/");
+        }else{
+            campground.find().where('author.id').equals(profile._id).exec((err,campgrounds)=>{
+                res.render("users/show",{profile:profile,campgrounds:campgrounds});
+            })
+            
+        }
+    })
 })
 
 module.exports = router;
