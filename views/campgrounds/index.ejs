@@ -19,6 +19,16 @@
     </p>
     </div>    
 </header>
+<div class="container">
+    <section class="search-box">
+            <form action="/campgrounds" method="GET">
+                <div class="search-bar">
+                <input  class="search-bar__input" type="text" name="search" placeholder="Search" aria-label="Search">
+                <button type="submit" value="Search"  class="search-bar__submit"><i class="fas fa-search"></i></button>  
+                </div>    
+            </form>
+    </section>
+</div>
 </div>
 <div class="container">
 <div class="row" style="display:flex; flex-wrap: wrap;">
@@ -36,5 +46,6 @@
         </div>
     <%} %>
 </div>
+
 </div>
 <%- include('../partials/footer.ejs') -%>
