@@ -3,11 +3,14 @@
 ## Visuals
 
 <p>
-<img src="GIFS\YelpCamp-Google-Chrome-2020-08-0 (2).gif" style="width:1000px;margin-bottom:50px;"> 
+<img src="GIFS\YelpCamp-Google-Chrome-2020-08-1.gif" style="width:1000px;margin-bottom:50px;"> 
 <img src="GIFS\YelpCamp-Google-Chrome-2020-08-0.gif" style="width:1000px;margin-bottom:50px;">
 <img src="GIFS\YelpCamp-Google-Chrome-2020-08-0 (1).gif" style="width:1000px;">
 </p>
-
+<details>
+    <summary>See More GIFS</summary>
+    <img src="GIFS\YelpCamp-Google-Chrome-2020-08-2.gif" style="width:1000px;margin-bottom:50px;"> 
+</details>
 
 Yelpcamp is a project where users can create and add reviews about the added campground. In order to add a campground or review it,user must have an account.This project was part of web developer bootcamp by Colt Steele on udemy.
 
