@@ -16,8 +16,10 @@ This project was created using [Node.js](https://nodejs.org/en/) , [Express](htt
 ## Features
 <ul>
     <li>Users can create,edit,remove campgrounds.</li>
-    <li>Users can review campgrounds,and edit or delete their reviews.</li>
+    <li>Users can review campgrounds and edit or delete their reviews.</li>
     <li>User profiles include more information on user (full name, email, profile picture) and their campgrounds.</li>
+    <li>Admins can edit and remove any campgrounds.</li>
+    <li>Admins can delete users.</li>
 </ul>
 
 ## Running
