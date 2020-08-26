@@ -44,11 +44,15 @@
             </div>
         </div>
         <div class="profile-section-main">
-            <ul class="nav nav-tabs profile-tabs" role="tablist">
-                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#profile-overview" role="tab">Campgrounds</a></li>
+            <ul class="nav nav-tabs profile-tabs" role="tablist" id="myTab">
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#userprofile" role="tab">Campgrounds</a></li>
+                <%if(currentUser && currentUser._id.equals(profile._id) && currentUser.isAdmin){%>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#users" role="tab">Users</a></li>
+                <%}%>
             </ul>
             <div class="tab-content profile-tabs-content">
                     <!-- /.post-editor -->
+                    <div class="tab-pane active" id="userprofile">
                     <%for(var campground of campgrounds){%>
                     <div class="stream-posts">
                         <div class="stream-post">
@@ -63,10 +67,33 @@
                     </div>
                     <%}%>
                 </div>
+                <% if(currentUser && currentUser._id.equals(profile._id) && currentUser.isAdmin) {%>
+                <div class="tab-pane" id="users">
+                    <%for(var user of users){ if(!user.isAdmin){%>
+                        <div class="stream-posts">
+                            <div class="stream-post">
+                                <div class="sp-author">
+                                    <a href="/users/<%=user._id%>" class="sp-author-avatar"><img src="<%=user.avatar%>" alt=""></a>
+                                    <h6 class="sp-author-name"><a href="/users/<%=user._id%>"><%=user.username %></a></h6></div>
+                                <div class="sp-content">
+                    
+                                    <p class="sp-paragraph mb-0 d-flex justify-content-end align-items-end">
+                                        <p><%= user.about.substring(0,100)%></p>
+                                        <form action="/users/<%=user._id%>?_method=DELETE" method="POST">
+                                            <input class="btn btn-md btn-danger" type="submit" value="DELETE">
+                                          </form>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <%}}%>
+                </div>
+                <%}%>
+                </div>
+                
             </div>
         </div>
  
-    </div>
     </div>
 
 <%- include('../partials/footer.ejs') -%>
